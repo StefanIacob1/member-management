@@ -1,0 +1,16 @@
+<div>
+  <input
+    type="text"
+    placeholder="Search members..."
+    [(ngModel)]="searchQuery"
+    (input)="onSearch()"
+  />
+
+  <ul>
+    <li *ngFor="let member of filteredMembers">
+      <a [routerLink]="['/member', member.id]">
+        {{ member.name }} - {{ member.membershipStatus }}
+      </a>
+    </li>
+  </ul>
+</div>

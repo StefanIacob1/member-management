@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+// Define some basic color variables
+$primary-color: #2b6cb0;
+$secondary-color: #edf2f7;
+$text-color: #2d3748;
+
+// Apply the Satoshi font and background color
+body {
+  font-family: "Satoshi", sans-serif;
+  color: $text-color;
+  background-color: $secondary-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Ensure consistent box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Add some utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
