@@ -1,9 +1,9 @@
-// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 @NgModule({
-  imports: [BrowserModule],
-  bootstrap: [], // Remove AppComponent from here
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
 })
 export class AppModule {}

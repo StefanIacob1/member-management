@@ -6,10 +6,10 @@ import { FooterComponent } from './Components/Shared/Footer/Footer';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterOutlet, HeaderComponent, FooterComponent], // Include other components and modules here
+  standalone: true, // Indicates this is a standalone component
+  imports: [RouterOutlet, HeaderComponent, FooterComponent], // Import other components
 })
 export class AppComponent {
   title = 'member-management';

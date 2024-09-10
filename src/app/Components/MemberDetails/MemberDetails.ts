@@ -1,16 +1,19 @@
-// src/app/Components/MemberDetails/MemberDetails.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 import { MemberService } from '../../services/MemberService';
 import { MemberModel } from '../../models/MemberModel';
 
 @Component({
   selector: 'app-member-details',
+  standalone: true,
   templateUrl: './MemberDetails.html',
   styleUrls: ['./MemberDetails.scss'],
+  imports: [CommonModule], // Add CommonModule here
 })
 export class MemberDetailsComponent implements OnInit {
-  member!: MemberModel; // Use non-null assertion if you are sure member will be initialized
+  member: MemberModel | null = null;
+  isLoading = true;
 
   constructor(
     private memberService: MemberService,
@@ -19,6 +22,6 @@ export class MemberDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.member = this.memberService.getMemberById(id)!; // Use non-null assertion if you're sure it's not undefined
+    this.member = this.memberService.getMemberById(id) || null;
   }
 }
